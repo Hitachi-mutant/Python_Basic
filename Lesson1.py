@@ -1,3 +1,4 @@
+'''Task 1 - is to set up a Git repository'''
 '''Task 2'''
 #Just a boring print function
 print("this world is to small for both of us\n")
