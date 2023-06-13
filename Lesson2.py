@@ -3,7 +3,7 @@
 '''Task #1 - The greeting program'''
 import datetime
 name = 'Alex'
-date = datetime.date.today().strftime('%A') #Dinamic day is more fun
+date = datetime.date.today().strftime('%A') #Dynamic day is more fun
 print(f"Good day {name}! {date} is a perfect day to learn some python.")
 good_day_output = "Good day {name}! {date} is a perfect day to learn some python.".format(name = name, date = date)
 print(good_day_output)
