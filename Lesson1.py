@@ -1,17 +1,21 @@
 '''Task 1 - is to set up a Git repository'''
+
 '''Task 2'''
+
 #Just a boring print function
 print("this world is to small for both of us\n")
 #Print with end parameter
 print("can I get a HOOYYYAAAA", end="!?!\n\n")
 #print with separator
 print(1,2,3,4,5,"\n", sep=" | ")
+
 '''Task 3'''
-#Letter O
+#Letter 'O'
 print("#########","\n#\t#"*3,"\n#########\n")
-#letter H
+#letter 'H'
 print("\n#\t#\n#\t#\n#########\n#\t#\n#\t#\n")
-#Just some string templates for practice
+
+#Some string templates for practice
 git_name = "github.com:your-username"
 git_repository = "repository.git"
 print(f"Use the following command to set the remote URL: git remote set-url origin git@{git_name}/{git_repository}.\nReplace 'your-username' and 'repository' with your actual GitHub username and the name of your repository.")
