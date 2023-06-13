@@ -14,14 +14,14 @@ last_name = 'Green'
 print('Hello ' + first_name + ' ' + last_name + '! May this ' + date + ' will be great!')
 
 '''Task #3 - Using python as a calculator'''
-a, b = -5, 8
-print(a + b) #3
-print(a - b) #-13
-print(a / b) #-0.625
-print(a * b) #-40
-print(a ** b) #390625
-print(a % b) #3
-print(a // b) #-1
+a, b = 15, 8
+print(a + b) #Addition
+print(a - b) #Subtraction
+print(a / b) #Division
+print(a * b) #Multiplication
+print(a ** b) #Exponent (Power)
+print(a % b) #Modulus
+print(a // b) #Floor division
 
 
 '''===== Tasks for our group ====='''
