@@ -48,4 +48,15 @@ else:
     pass
 
 '''Task #3 - Remove symbols ; and %'''
-csv_file = []
+csv_file = ['Client first name', 'Client last name', ';Transaction ID%', 'Transaction velue', 'Address of the sender', 'Address of the receiver']
+for item in range(len(csv_file)):
+    if 'Transaction ID' in csv_file[item]:
+        csv_file[item] = csv_file[item].replace(';', "").replace('%', "")
+print(csv_file)
+
+'''Task #3 - Remove random & symbol'''
+csv_file = ['Client first nam&e', 'Client last name', 'Transaction ID', 'Tran&saction velue', 'Address& of the sender', 'Address of the receiver']
+for item in range(len(csv_file)):
+    if '&' in csv_file[item]:
+        csv_file[item] = csv_file[item].replace('&', "")
+print(csv_file)
