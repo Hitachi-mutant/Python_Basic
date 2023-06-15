@@ -1,6 +1,8 @@
+'''Home work for the lesson 1'''
+
 '''Task 1 - is to set up a Git repository'''
 
-'''Task 2'''
+'''Task 2 - print function, pass "sep", "end" params'''
 
 #Just a boring print function
 print("this world is to small for both of us\n")
@@ -9,7 +11,7 @@ print("can I get a HOOYYYAAAA", end="!?!\n\n")
 #print with separator
 print(1,2,3,4,5,"\n", sep=" | ")
 
-'''Task 3'''
+'''Task 3 - capital letters "O" and "H", made from "#" symbols'''
 #Letter 'O'
 print("#########","\n#\t#"*3,"\n#########\n")
 #letter 'H'

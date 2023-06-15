@@ -1,4 +1,5 @@
 '''Home work for the lesson 3'''
+
 '''Task 1 - String manipulation'''
 list_of_strings = ['helloworld', 'my', 'x']
 for item in list_of_strings:
