@@ -1,5 +1,6 @@
 '''===== Tasks from Lesson 2 ====='''
 
+
 '''Task #1: Email templates - Вам потрібно запропонувати замовнику декілька варіантів 
 створення електронних пошт для його працівників. 
 Реалізуйте функціонал генерування пошт
@@ -55,7 +56,9 @@ for item in range(len(csv_file)):
 print(csv_file)
 
 
+
 '''===== Tasks from Lesson 3 ====='''
+
 
 '''Task #1 - Email templates :Реалізуйте функціонал генерування пошт для компанії "kobzar.com",
 де користувач повинен самостійно вводити своє ім'я і прізвище з терміналу.'''
@@ -63,6 +66,7 @@ print(csv_file)
 first_name_input = input('Enter your First Name')
 last_name_input = input('Enter your Last Name')
 print(f'Your generated email: {first_name_input}.{last_name_input}@kobzar.com')
+
 
 '''Task #2 - Call me back: Ви - настирливий продавець і коли хтось відвідує ваш сайт онлайн-магазину, 
 ви запитуєте 5 разів у користувача, чи потрібно йому передзвонити. 
@@ -80,6 +84,7 @@ while i < 5:
     i += 1
 else: print('Have a good day then')
 
+
 '''Task #3 - more pushy salesman: Ви - тепер ще більш настирливий продавець і коли користувач відвідує ваш сайт, 
 ви прямо таки постійно питаєте у нього, чи потрібно йому передзвонити для формування замовлення. 
 Допоки користувач не натиснув кнопку "ні, дякую", ви постійно нагадуватимете йому про дзвінок.
@@ -93,6 +98,7 @@ while True:
     elif answer == 'n':
         print('We will not bother you anymore')
         break
+
 
 '''Task #4 - Free pens and rulers: Ви - власник онлайн магазину канцтоварів.
 Кожному 3-му покупцю ви обіцяєте в подарунок ручку до замовлення, а кожному 5-му - лінійку.
@@ -108,7 +114,7 @@ if amount.isdigit():
     for number in numbers:
         if number % 3 == 0 and number % 5 != 0:
             print("Here is a free PEN!")
-            print(number) #I print a number to make sure that we give gifts to proper customers
+            print(number) # I print a number to make sure that we give gifts to proper customers
         elif number % 5 == 0 and number % 3 != 0:
             print("Here is a free RULER!")
             print(number)
@@ -117,3 +123,247 @@ if amount.isdigit():
             print(number)
         else: pass
 else: print('Invalid input. The amount of customers must be an integer number')
+
+
+
+'''===== Tasks from Lesson 4 ====='''
+
+
+'''Task #1 - Infinite string Calculater: Запрограмуйте програму калькулятор, яка буде приймати від 
+користувача введення 2-х чисел та вид математичної операції (+, -, *, /). 
+Виведіть результат операції та продовжуйте виконання калькулятора, поки користувач не введе символ "q" для виходу.'''
+
+'''while True:      #The task has to be commented because it is an infinite loop
+    first_number = input('Enter the first number: ')
+    if first_number == 'q':
+        exit()
+    second_number = input('Enter the second number: ')
+    if second_number == 'q':
+        exit()
+    operation_sign = input('Enter operation sign: ')
+    if operation_sign == 'q':
+        exit()
+
+    if first_number.isdigit() and second_number.isdigit():
+        first_number = int(first_number)
+        second_number = int(second_number)
+        if operation_sign == '-':
+            output = first_number - second_number
+        elif operation_sign == '+':
+            output = first_number + second_number
+        elif operation_sign == '*':
+            output = first_number * second_number
+        elif operation_sign == '/':
+            output = first_number / second_number
+        print(output)'''
+
+
+'''Task #2 - List of employee emails:"Знову генеруємо пошту для працівника, але тепер всі дані містяться в списку
+[""name"", ""surname"", ""domain""]"'''
+
+input_firs_name = input('Enter your First Name: ')
+input_last_name = input('Enter your Last Name: ')
+list_of_employees = []
+list_of_employees.append(input_firs_name)
+list_of_employees.append(input_last_name)
+list_of_employees.append('@kobzar.com')
+employee_email = list_of_employees[0] + '.' + list_of_employees[1] + list_of_employees[2]
+print(employee_email)
+
+
+'''Task #3 - Emails in nested lists:"Те ж саме завдання із генеруванням пошти, але тепер у вас декілька працівників (нехай буде 5). 
+Спробуйте використати вкладені списки" '''
+
+i = 1
+while i <= 3:
+    input_firs_name = input('Enter your First Name: ')
+    input_last_name = input('Enter your Last Name: ')
+    if i == 1:
+        employee_data_1 = [input_firs_name, input_last_name, '@kobzar.com']
+    elif i == 2:
+        employee_data_2 = [input_firs_name, input_last_name, '@kobzar.com']
+    elif i == 3:
+        employee_data_3 = [input_firs_name, input_last_name, '@kobzar.com']
+    i += 1
+
+all_employees = [employee_data_1, employee_data_2, employee_data_3]
+print(all_employees)
+        # The easy way
+'''employee_email_1 = all_employees[0][0] + '.' + all_employees[0][1] + all_employees[0][2]
+print(employee_email_1)
+employee_email_2 = all_employees[1][0] + '.' + all_employees[1][1] + all_employees[1][2]
+print(employee_email_2)
+employee_email_3 = all_employees[2][0] + '.' + all_employees[2][1] + all_employees[2][2]
+print(employee_email_3)'''
+
+for list_of_employee_emails in all_employees:
+    employee_email = '' + list_of_employee_emails[0] + list_of_employee_emails[1] + list_of_employee_emails[2]
+    print(employee_email)
+
+
+'''Task #4 - Warehouse management systems:Створіть програму для керування списком продуктів в інтернет-магазині. 
+Кожен продукт може мати назву, ціну та кількість на складі. Реалізуйте можливість користувачу 
+додавати нові продукти, оновлювати інформацію про продукти та виводити список доступних 
+продуктів за певними критеріями (наприклад, за ціною або наявністю на складі). '''
+
+# Basic data
+warehouse_list = [
+    {
+    'Product Name' : 'T-shirt',
+    'Product Price - $' : 15,
+    'In stock' : 54,
+    'Product ID' : 1,
+    },
+    {
+    'Product Name' : 'Pants',
+    'Product Price - $' : 9,
+    'In stock' : 0,
+    'Product ID' : 2,
+    },
+    {
+    'Product Name' : 'Jeans',
+    'Product Price - $' : 26,
+    'In stock' : 80,
+    'Product ID' : 3,
+    }
+]
+
+# Data for a new product
+product_name = input('Enter Product Name: ')
+product_price = input('Enter Product Price ($): ')
+product_stock = input('Enter Product amount in Stock: ')
+
+new_item_to_add = {
+'Product Name' : product_name,
+'Product Price - $' : product_price,
+'In stock' : product_stock,
+'Product ID' : len(warehouse_list)+1,
+}
+
+# Adding the new product to the list
+warehouse_list.append(new_item_to_add)
+print(warehouse_list)
+
+# Editing the data in the warehouse_list
+product_id_to_edit = int(input('Choose the ID of the product you want to edit: '))
+for item in warehouse_list:
+    if item['Product ID'] == product_id_to_edit:
+        new_product_name = input('Enter new product Name: ')
+        new_product_price = input('Enter new product Price: ')
+        new_product_stock = input('Enter new product amount in Stock: ')
+        item['Product Name'] = new_product_name
+        item['Product Price - $'] = new_product_price
+        item['In stock'] = new_product_stock
+        break
+    else:
+        print('Incorrect ID. There are only IDs from 1 to ' + str(len(warehouse_list)))
+        break
+        
+print(warehouse_list)
+
+# Only print products which we have in our warehouse
+products_we_have_in_stock = [item for item in warehouse_list if item['In stock'] != 0]
+print(products_we_have_in_stock)
+
+# Only print products that are cheeper than X dollars
+max_price = int(input('Enter the MAX price of the product: '))
+products_less_than_MAX_price = [item for item in warehouse_list if item['Product Price - $'] <= max_price]
+print(products_less_than_MAX_price)
+
+
+'''Task #4 - Task list management: Напишіть програму для керування списком завдань. 
+Кожне завдання може мати назву, опис, пріоритет та статус (наприклад, "виконується", "в очікуванні", "завершено"). 
+Реалізуйте можливість додавання нових завдань, оновлення статусу завдань та виведення списку завдань за пріоритетом.'''
+
+# Basic data
+list_of_tasks = [
+    {
+    'Task Name' : 'Digital Detox Challenge',
+    'Task Description' : 'Disconnect from digital devices and enjoy a tech-free day.',
+    'Priority' : 1,             # From 1 to 5, where 1 is the highest
+    'Status' : 'in progress',   # "in progress", "pending", "completed"
+    },
+    {
+    'Task Name' : 'Home Clean-Up',
+    'Task Description' : 'Dedicate a day to deep clean your living space: dusting, vacuuming, mopping, and organizing.',
+    'Priority' : 3,
+    'Status' : 'completed',
+    },
+    {
+    'Task Name' : 'Fitness Challenge',
+    'Task Description' : 'Engage in a 30-minute workout session to boost your physical well-being.',
+    'Priority' : 2,
+    'Status' : 'pending',
+    }
+]
+
+# Input data for a new task and add the new task to the list
+task_name = input('Enter Task Name: ')
+task_description = input('Enter Task Description: ')
+task_priority = input('Enter Task Priority: ')
+task_status = input('Enter Task Status: ')
+
+new_item_to_add = {
+'Task Name' : task_name,
+'Task Description' : task_description,
+'Priority' : task_priority,
+'Status' : task_status,
+}
+
+list_of_tasks.append(new_item_to_add)
+print(list_of_tasks)
+
+# Editing the status of the task
+task_name_to_edit = input('Choose the Name of the task you want to edit: ')
+for item in list_of_tasks:
+    if item['Task Name'] == task_name_to_edit:
+        new_task_status = input('Enter new Task Status: ')
+        item['Status'] = new_task_status
+        break
+else:
+    print('Incorrect Task Name')
+        
+print(list_of_tasks)
+
+# List of tasks by priority
+tasks_by_priority = []
+
+for priority in range(1, 6):  # Our priorities range from 1 to 5
+    for task in list_of_tasks:
+        if task['Priority'] == priority:
+            tasks_by_priority.append(task)
+
+print(tasks_by_priority)
+
+
+'''===== Tasks from Lesson 5 ====='''
+
+
+'''Task 6 - Students Jurnal: Напишіть програму для керування студентськими оцінками. Реалізуйте можливість додавання оцінок, 
+видалення оцінок, обчислення середнього балу студента та виведення списку студентів з їх оцінками.'''
+
+# Basic data
+students_jurnal = {'Savchenko' : 4, 'Hunko' : 3, 'Terentiva' : 2, 'Dmytrenko' : 3,}
+choose_student = input('Choose a student: ')
+new_grade = int(input('Enter a grade: '))
+
+for student in students_jurnal:
+    if student == choose_student:
+        students_jurnal[student] = new_grade
+        break
+else:
+    print('There is no such student in our jurnal')
+
+# Calculate avarage
+avarage_grade = 0
+for student in students_jurnal:
+    avarage_grade = (avarage_grade + students_jurnal[student])
+
+avarage_grade = avarage_grade / len(students_jurnal)
+print('Avarage grade of our class: ' + str(avarage_grade))
+print(students_jurnal)
+
+
+
+
+
