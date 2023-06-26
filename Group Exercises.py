@@ -364,6 +364,94 @@ print('Avarage grade of our class: ' + str(avarage_grade))
 print(students_jurnal)
 
 
+'''Task 7 - Restaurant orders: Створіть програму для управління замовленнями в ресторані. 
+Використовуйте список (list) для зберігання замовлень, де кожне замовлення представлене 
+як кортеж (tuple) з назвою страви і ціною. Реалізуйте можливість додавання нових замовлень, 
+видалення замовлень і розрахунку загальної суми замовлення.'''
+
+full_menu = {'TOP_GUN' : 5, 'DIAMOND' : 8, 'GOLDEN_GATE' : 9, 'SECRET_WISH' : 4,}
+
+main_clients_order = input('What would you like to order? ')
+additional_clients_order = input('Would you like enything else? ')
+
+# Every order is a tuple
+order_tuple = ()
+for order in full_menu:
+    if order == main_clients_order:
+        order_tuple += (main_clients_order,)
+    elif order == additional_clients_order:
+        order_tuple += (additional_clients_order,) 
+
+if order_tuple:
+    print(order_tuple)
+else:
+    print('There is no such dish on the menu')
+
+# Add new item or remove one
+tweaking_oreder = input('Would you like to add or remove something? ("+" - to add, "-" - to remove): ')
+if tweaking_oreder == '+':
+    add_new_dish = input('What would you like to add? ')
+    for order in full_menu:
+        if order == add_new_dish:
+            order_tuple += (add_new_dish,)    
+elif tweaking_oreder == '-':
+    remove_from_order = input('What would you like to remove? ')
+    for order in full_menu:
+        if order == remove_from_order:
+            order_tuple = tuple(item for item in order_tuple if item != remove_from_order)
+else:
+    print('Please add or remove a dish')
+if order_tuple:
+    print(order_tuple)
+
+# The price of the order
+price_of_the_order = 0
+for dish in order_tuple:
+    if dish in full_menu:
+        price_of_the_order += full_menu[dish]
+print(price_of_the_order)
 
 
+'''Task 8 - On-line store statistics: У вас є дані по покупкам, здійсненим у вашому онлайн-магазині. 
+Вам потрібно реалізувати функціонал, який надасть базову статистику по здійсненим покупкам. 
+Надайте дані по наступним моментах:
+- Які 3 продукти ваші клієнти купують найчастіше
+- Які 3 продукти ваші клієнти купують найрідше?
+- Скільки разів клієнти купували кожен з ваших продуктів?
+'''
 
+awesome_CPUs_store = {
+    'INTEL Core i5 11400F' : {'Price, $' : 499, 'Stock' : 34, 'Sold' : 5,},
+    'INTEL Pentium G6405' : {'Price, $' : 537, 'Stock' : 21, 'Sold' : 3,},
+    'AMD Ryzen 5 3600' : {'Price, $' : 318, 'Stock' : 42, 'Sold' : 7,},
+    'AMD Ryzen 7 5700X' : {'Price, $' : 819, 'Stock' : 51, 'Sold' : 11,},
+    }
+
+# продукти ваші клієнти купують найчастіше
+def most_popular_product(cpu_store):
+    # sold_values = []
+    # for product in cpu_store:
+    #     sold_values.append(cpu_store[product]['Sold'])
+    # return max(sold_values)
+    return max(product['Sold'] for product in cpu_store.values())
+
+max_sold = most_popular_product(awesome_CPUs_store)
+print(max_sold)
+
+# продукти ваші клієнти купують найрідше
+def most_unpopular_product(cpu_store):
+    return min(product['Sold'] for product in cpu_store.values())
+
+min_sold = most_unpopular_product(awesome_CPUs_store)
+print(min_sold)
+
+# Скільки разів клієнти купували кожен з ваших продуктів
+print('Our total sales: ')
+def total_sales(cpu_store):
+    all_product_sales = {}
+    for item, product in cpu_store.items():
+        all_product_sales[item] = product['Sold']
+    return all_product_sales
+
+products_sold = total_sales(awesome_CPUs_store)
+print(products_sold)
