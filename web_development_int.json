@@ -1,0 +1,1 @@
+{"employees": [{"id": 1, "name": "John Doe", "position": "Manager"}, {"id": 3, "name": "Mike Johnson", "position": "Designer"}], "departments": [{"id": 1, "name": "Engineering", "location": "Building A"}, {"id": 2, "name": "Sales", "location": "Building B"}, {"id": 3, "name": "Marketing", "location": "Building C"}]}
