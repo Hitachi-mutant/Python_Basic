@@ -627,56 +627,56 @@
 #     json.dump(json_data, json_file)
 
 
-# # Наступне завдання - розібратись із бібліотекою csv
-# # Реалізувати функціонал вичитки, апдейту і видалення даних з цього файлу.
-# # Потім реалізувати функціонал запису своїх даних у інший csv-файл.
-# # Як додаткове завдання - реалізувати функціонал запису діктів у csv-файл
+# Наступне завдання - розібратись із бібліотекою csv
+# Реалізувати функціонал вичитки, апдейту і видалення даних з цього файлу.
+# Потім реалізувати функціонал запису своїх даних у інший csv-файл.
+# Як додаткове завдання - реалізувати функціонал запису діктів у csv-файл
 
-# import csv
+import csv
 
-# csv_file_path = 'nestle_employee.csv'
+csv_file_path = 'nestle_employee.csv'
 
-# # read from csv
-# with open(csv_file_path, "r") as csv_file:
-#     reader_csv = csv.reader(csv_file)
-#     for row in reader_csv:
-#         print(row)
+# read from csv
+with open(csv_file_path, "r") as csv_file:
+    reader_csv = csv.reader(csv_file)
+    for row in reader_csv:
+        print(row)
 
-# # add to csv
-# added_data = [['WWWWWWWW', 'QQQQQQQQ', '33', '+372 98765432', 'Tallinn', 'Estonia', 'Sales', 'Sales Representative']]
+# add to csv
+added_data = [['WWWWWWWW', 'QQQQQQQQ', '33', '+372 98765432', 'Tallinn', 'Estonia', 'Sales', 'Sales Representative']]
 
-# with open(csv_file_path, "a", newline="") as csv_file:
-#     write_to_csv = csv.writer(csv_file) 
-#     write_to_csv.writerows(added_data)
-
-
-# # remove row data_to_delete
-# data_to_delete = ['WWWWWWWW', 'QQQQQQQQ', '33', '+372 98765432', 'Tallinn', 'Estonia', 'Sales', 'Sales Representative']
-
-# with open(csv_file_path, "r", newline="") as csv_file:
-#     csv_reader = csv.reader(csv_file)
-#     rows = list(csv_reader)
-
-# index_to_delete = None
-
-# for i, row in enumerate(rows):
-#     if row == data_to_delete:
-#         index_to_delete = i
-#         break
-
-# del rows[index_to_delete]
-
-# with open(csv_file_path, "w", newline="") as csv_file:
-#     csv_writer = csv.writer(csv_file)
-#     csv_writer.writerows(rows)
+with open(csv_file_path, "a", newline="") as csv_file:
+    write_to_csv = csv.writer(csv_file) 
+    write_to_csv.writerows(added_data)
 
 
-# # Write csv file to a new csv file
-# with open(csv_file_path, "r") as csv_file:
-#     csv_reader = csv.reader(csv_file)
-#     data = list(csv_reader)
+# remove row data_to_delete
+data_to_delete = ['WWWWWWWW', 'QQQQQQQQ', '33', '+372 98765432', 'Tallinn', 'Estonia', 'Sales', 'Sales Representative']
 
-# destination_file = 'nestle_employee_1.csv'
-# with open(destination_file, "w", newline='') as csv_file:
-#     csv_writer = csv.writer(csv_file)
-#     csv_writer.writerows(data)
+with open(csv_file_path, "r", newline="") as csv_file:
+    csv_reader = csv.reader(csv_file)
+    rows = list(csv_reader)
+
+index_to_delete = None
+
+for i, row in enumerate(rows):
+    if row == data_to_delete:
+        index_to_delete = i
+        break
+
+del rows[index_to_delete]
+
+with open(csv_file_path, "w", newline="") as csv_file:
+    csv_writer = csv.writer(csv_file)
+    csv_writer.writerows(rows)
+
+
+# Write csv file to a new csv file
+with open(csv_file_path, "r") as csv_file:
+    csv_reader = csv.reader(csv_file)
+    data = list(csv_reader)
+
+destination_file = 'nestle_employee_1.csv'
+with open(destination_file, "w", newline='') as csv_file:
+    csv_writer = csv.writer(csv_file)
+    csv_writer.writerows(data)

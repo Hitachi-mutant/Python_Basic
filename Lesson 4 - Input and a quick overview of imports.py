@@ -15,13 +15,13 @@ else:
 users_name = input('Enter your name: ')
 users_age = float(input('Enter your age: '))
 
-if float(users_age):
+if users_age:
     users_age = int(users_age) + 1
     print(f'Hello {users_name}, on your next birthday you’ll be {users_age} years')
 else:
     print('Enter your proper age')
 
-'''Task 3 - Words combination'''
+'''Task 3 - String with characters combination'''
 
 import random   #we imported this earlier, but just in case this module will be run separately
 

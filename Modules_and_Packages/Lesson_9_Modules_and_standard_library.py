@@ -2,21 +2,21 @@
 
 '''Task 1 - Imports practice'''
 
-# import my_modules
+import my_modules
 
-# print(my_modules.not_the_best_result(my_modules.self_assessment_tests))
+print(my_modules.not_the_best_result(my_modules.self_assessment_tests))
 
 
-# '''Task 2 - The sys module'''
+'''Task 2 - The sys module'''
 
-# import sys
+import sys
 
-# # parameter 'r' to write the path as it is without the need for escaping '\'
-# modules_folder = r'C:\Users\alexs\Python\Modules_and_Packages\inner_modules' 
-# sys.path.append(modules_folder)
-# print(sys.path)
-# sys.path.remove(modules_folder)
-# print(sys.path)
+# parameter 'r' to write the path as it is without the need for escaping '\'
+modules_folder = r'C:\Users\alexs\Python\Modules_and_Packages\inner_modules' 
+sys.path.append(modules_folder)
+print(sys.path)
+sys.path.remove(modules_folder)
+print(sys.path)
 
 
 '''Task 3 - Basics, import, work with os module'''

@@ -30,15 +30,3 @@ self_assessment_tests = {
 def not_the_best_result(test_results):
     my_grades = {grade : test_results[grade] for grade in test_results if test_results[grade] < 100}
     return my_grades
-
-
-
-
-
-
-
-
-
-
-
-

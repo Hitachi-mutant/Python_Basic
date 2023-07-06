@@ -9,7 +9,7 @@ with open('Lesson_11_Working_with_files/myfile.txt', "r") as my_task1_file:
     result = my_task1_file.read()
 
 print(result)
-
+my_task1_file.close()
 
 '''Task 2 - Phonebook application'''
 

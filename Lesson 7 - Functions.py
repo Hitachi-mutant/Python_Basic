@@ -2,8 +2,8 @@
 
 '''Task 1 - A simple function'''
 users_answer = input('What is your favorite movie? ')
-def favorite_movie(users_answer):
-    print(f'My favorite movie is named: {users_answer}')
+def favorite_movie(users_answer_arg):
+    print(f'My favorite movie is named: {users_answer_arg}')
 
 favorite_movie(users_answer)
 

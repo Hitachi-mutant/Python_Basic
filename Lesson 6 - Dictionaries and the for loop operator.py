@@ -36,6 +36,7 @@ for fruit in stock:
 
 
 '''Task 3 - List comprehension exercise'''
+
 numbers = [1, 2, 3, 4, 5]
 # list_of_numbers_and_squared_numbers = [] # Here I used cycles
 # for num1 in numbers:
@@ -64,6 +65,3 @@ week_days_dict_revert = {day: index + 1 for index, day in enumerate(week_days_li
 print(week_days_dict)
 print('\n')
 print(week_days_dict_revert)
-
-
-
